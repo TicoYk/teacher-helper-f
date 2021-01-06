@@ -1,0 +1,15 @@
+@import "~@angular/material/theming";
+@import '../../styles.scss';
+
+.side-nav{
+  min-width: 220px;
+  margin: auto;
+}
+
+.mat-list-item{
+  font-size:1.1em;
+}
+
+.gray{
+  background-color:gray;
+}

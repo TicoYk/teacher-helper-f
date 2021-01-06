@@ -1,0 +1,52 @@
+<div class="container background">
+  <!-- Toolbar -->
+  <mat-toolbar color="primary">
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Teacher Helper</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="container dash-bg">
+    <!-- Sidenav -->
+    <mat-sidenav class="side-nav background-accent" #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened">
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon matListIcon>dashboard</mat-icon>
+          <h3 matLine> Dashboard </h3>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon>person</mat-icon>
+          <h3 matLine> Alunos </h3>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListIcon>content_paste</mat-icon>
+          <h3 matLine> Salas </h3>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Main content -->
+    <mat-sidenav-content>
+
+      <div class="productCards">
+        <mat-grid-list cols="4" rowHeight="6:1">
+
+          <mat-grid-tile class="gray mat-typography title-group" [colspan]="4" [rowspan]="1">
+            <h1>Heading Goes Here</h1>
+          </mat-grid-tile>
+
+          <mat-grid-tile class="gray" [colspan]="2" [rowspan]="4"><h1>x</h1>
+          </mat-grid-tile>
+          <mat-grid-tile class="gray" [colspan]="1" [rowspan]="2"><h1>y</h1>
+          </mat-grid-tile>
+          <mat-grid-tile class="gray" [colspan]="1" [rowspan]="2"><h1>w</h1>
+          </mat-grid-tile>
+          <mat-grid-tile class="gray" [colspan]="2" [rowspan]="2"><h1>z</h1>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
