@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -91,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -124,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "teacher-helper-f"
+  "defaultProject": "teacher-helper-f",
+  "cli": {
+    "analytics": "e4fbbbcc-6078-4d6c-9df4-1d1129b8a936"
+  }
 }
