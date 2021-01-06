@@ -1,0 +1,28 @@
+@import '../../styles.scss';
+
+.input-container {
+  display: flex;
+  flex-flow: column;
+}
+
+#login-box {
+  margin:auto;
+  min-width: 400px;
+  background-color: mat-color($accent, 0.8);
+  padding: 20px;
+}
+
+.button-row {
+  display: table-cell;
+}
+
+.button-container {
+  float:center;
+}
+
+.login-button {
+  width: 150px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
