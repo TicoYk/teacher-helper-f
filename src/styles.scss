@@ -25,3 +25,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .background {
   background-color: mat-color($primary);
 }
+
+.title-box {
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+.title {
+  color: mat-color($primary, 0.9);
+  font-size: 2em;
+  text-align: left;
+}
