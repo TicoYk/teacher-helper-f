@@ -1,5 +1,6 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +12,10 @@ export class DashboardComponent {
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
 
+  constructor(public router: Router){
+  }
+
   ngOnInit() {
-    console.log(window.innerWidth)
     if (window.innerWidth < 768) {
       this.sidenav.fixedTopGap = 55;
       this.opened = false;

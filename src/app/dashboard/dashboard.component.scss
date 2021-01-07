@@ -6,10 +6,22 @@
   margin: auto;
 }
 
+.mat-nav-list{
+  margin:0px;
+  padding: 0px;
+}
 .mat-list-item{
   font-size:1.1em;
 }
 
 .gray{
   background-color:gray;
+}
+
+.mat-list-item.active {
+  background: mat-color($accent);
+}
+
+.content {
+  padding: 20px;
 }
