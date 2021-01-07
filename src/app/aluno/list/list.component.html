@@ -1,0 +1,35 @@
+<app-dashboard>
+  <div class="title-box">
+    <h1 class="title">Alunos</h1>
+  </div>
+  <div class="content-container">
+    <div class="content data-table">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 student-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    <mat-card class="form-box">
+      <mat-form-field appearance="fill">
+        <mat-label>Escreva o nome do Aluno</mat-label>
+        <input matInput type=text required>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" class="register-button">Registrar</button>
+      </div>
+    </mat-card>
+  </div>
+</app-dashboard>
