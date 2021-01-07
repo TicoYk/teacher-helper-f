@@ -1,8 +1,9 @@
+import { StudentRoutes } from './aluno/student-routing.module';
 import { LoginComponent } from './login/login.component';
-import { AppComponent } from './app.component';
 import { DashBoardRoutes } from './dashboard/dashboard-routing.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 const routes: Routes = [
   {
     path: '',
@@ -13,7 +14,8 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  ...DashBoardRoutes
+  ...DashBoardRoutes,
+  ...StudentRoutes
 ];
 
 @NgModule({
