@@ -15,7 +15,7 @@
           <mat-icon matListIcon>person</mat-icon>
           <h3 matLine> Alunos </h3>
         </mat-list-item>
-        <mat-list-item>
+        <mat-list-item  [routerLink]="['/rooms']" [routerLinkActive]="router.url === '/rooms' ? ['active'] : ''" >
           <mat-icon matListIcon>content_paste</mat-icon>
           <h3 matLine> Salas </h3>
         </mat-list-item>
