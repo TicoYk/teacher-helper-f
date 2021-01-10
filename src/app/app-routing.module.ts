@@ -1,4 +1,3 @@
-import { StudentRoutes } from './aluno/student-routing.module';
 import { LoginComponent } from './login/login.component';
 import { DashBoardRoutes } from './dashboard/dashboard-routing.module';
 import { NgModule } from '@angular/core';
@@ -15,7 +14,6 @@ const routes: Routes = [
     component: LoginComponent
   },
   ...DashBoardRoutes,
-  ...StudentRoutes
 ];
 
 @NgModule({
