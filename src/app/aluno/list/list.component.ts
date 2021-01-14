@@ -33,8 +33,6 @@ export class ListComponent {
 
   matcher = new MyErrorStateMatcher();
 
-  student: Student;
-
   displayedColumns: string[] = ['id', 'name'];
   dataSource = new MatTableDataSource<Student>();
 
@@ -42,7 +40,6 @@ export class ListComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private studentService: StudentService, private changeDetectorRefs: ChangeDetectorRef){
-    this.student = new Student();
     this.studentService.getStudents().subscribe(res => {
       this.dataSource = new MatTableDataSource<Student>(res);
       this.dataSource.sort = this.sort;
@@ -51,7 +48,8 @@ export class ListComponent {
   }
 
   cadastrar(): void{
-    console.log(JSON.stringify(this.student));
+    const name: string = this.studentFormControl.value;
+    this.studentService.registerStudent(new Student(name));
   }
 
 }
