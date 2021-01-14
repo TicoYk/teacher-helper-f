@@ -1,4 +1,4 @@
-export default interface Student {
+export default class Student {
   id?: number;
   name?: string;
 }
