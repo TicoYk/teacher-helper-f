@@ -23,13 +23,31 @@
       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
     <mat-card class="form-box">
-      <mat-form-field appearance="fill">
-        <mat-label>Escreva o nome do Aluno</mat-label>
-        <input matInput type=text required>
-      </mat-form-field>
-      <div class="button-container">
-        <button mat-raised-button color="primary" class="register-button">Registrar</button>
-      </div>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Escreva o nome do Aluno</mat-label>
+          <input
+            matInput
+            type=text
+            name="name"
+            [formControl]="studentFormControl"
+            [errorStateMatcher]="matcher"
+            >
+          <mat-error *ngIf="studentFormControl.hasError('minlength') && !studentFormControl.hasError('required')">
+            No mínimo 3 carácteres
+          </mat-error>
+          <mat-error *ngIf="studentFormControl.hasError('required')">
+            Campo <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-container">
+          <button
+          mat-raised-button color="primary"
+          class="register-button"
+          (click) = "cadastrar()"
+          >Registrar</button>
+        </div>
+      </form>
     </mat-card>
   </div>
 </app-dashboard>

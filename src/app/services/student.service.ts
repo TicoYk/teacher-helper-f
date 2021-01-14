@@ -10,7 +10,7 @@ export class StudentService {
   readonly apiURL: string;
 
   constructor(private http: HttpClient) {
-    this.apiURL = '/api/student';
+    this.apiURL = '/api/students';
   }
 
   registerStudent(student: Student): void {
