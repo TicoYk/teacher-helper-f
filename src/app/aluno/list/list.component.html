@@ -4,7 +4,7 @@
   </div>
   <div class="content-container">
     <div class="content data-table">
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 student-table">
+      <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" class="mat-elevation-z8 student-table">
         <!-- Position Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
@@ -44,7 +44,7 @@
           <button
           mat-raised-button color="primary"
           class="register-button"
-          (click) = "cadastrar()"
+          (click) = "register()"
           >Registrar</button>
         </div>
       </form>
