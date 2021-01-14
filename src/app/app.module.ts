@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './room/room.component';
+import { ErrorStateMatcher } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,9 @@ import { RoomComponent } from './room/room.component';
     ReactiveFormsModule,
   ],
   providers: [
-    StudentService
+    StudentService,
+    ErrorStateMatcher
+
   ],
   bootstrap: [AppComponent]
 })
