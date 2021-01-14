@@ -2,9 +2,9 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { StudentService } from './../../services/student.service';
 import { ChangeDetectorRef, Component, ViewChild, NgModule } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort, MatSortable } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import Student from '../shared/student.model';
+import Student from '../../models/student.model';
 import { NgForm, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 @NgModule({
   providers: [
