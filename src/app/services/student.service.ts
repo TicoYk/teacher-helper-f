@@ -13,13 +13,11 @@ export class StudentService {
     this.apiURL = '/api/students';
   }
 
-  registerStudent(student: Student): void {
+  registerStudent(student: Student): Observable<Student> {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    this.http.post<Student>(this.apiURL, student, {headers}).subscribe(res => {
-      console.log(res);
-    });
+    return this.http.post<Student>(this.apiURL, student, {headers});
   }
 
   getStudents(): Observable<Student[]> {
