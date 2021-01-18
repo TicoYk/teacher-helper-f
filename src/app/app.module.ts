@@ -1,3 +1,4 @@
+import { RoomService } from './services/room.service';
 import { StudentService } from './services/student.service';
 import { studentModules } from './aluno/student.module';
 import { MaterialModule } from './material.module';
@@ -34,8 +35,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
   ],
   providers: [
     StudentService,
+    RoomService,
     ErrorStateMatcher
-
   ],
   bootstrap: [AppComponent]
 })
