@@ -1,0 +1,29 @@
+@import '../../styles.scss';
+
+.mat-grid-tile{
+  background-color: grey;
+}
+
+.room-table {
+  width: 100%;
+}
+
+.form-box {
+  width: 200px;
+  padding: 20px;
+  margin-left: 20px;
+  height:100%;
+}
+
+.content-container {
+  display: flex;
+}
+
+.content {
+  width: 100%;
+}
+
+.register-button {
+  margin-bottom: 0px;
+  float: right;
+}

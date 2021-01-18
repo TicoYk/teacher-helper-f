@@ -1,7 +1,57 @@
 <app-dashboard>
   <div class="title-box">
-    <h1 class="title">Sala - </h1>
+    <h1 class="title">Salas</h1>
   </div>
   <div class="content-container">
+    <div class="content data-table">
+      <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" class="mat-elevation-z8 room-table">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="columns">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Estudantes </th>
+          <td mat-cell *matCellDef="let element"> {{studentsCount(element.desks)}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    <mat-card class="form-box">
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Escreva o nome da Sala</mat-label>
+          <input
+            matInput
+            type=text
+            name="name"
+            [formControl]="roomFormControl"
+            [errorStateMatcher]="matcher"
+            >
+          <mat-error *ngIf="roomFormControl.hasError('minlength') && !roomFormControl.hasError('required')">
+            No mínimo 3 carácteres
+          </mat-error>
+          <mat-error *ngIf="roomFormControl.hasError('required')">
+            Campo <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-container">
+          <button
+          mat-raised-button color="primary"
+          class="register-button"
+          (click) = "register()"
+          >Registrar</button>
+        </div>
+      </form>
+    </mat-card>
   </div>
 </app-dashboard>
