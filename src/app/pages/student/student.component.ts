@@ -1,10 +1,10 @@
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
-import { StudentService } from './../../services/student.service';
+import { StudentService } from '@services/student.service';
 import { ChangeDetectorRef, Component, ViewChild, NgModule } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import Student from '../../models/student.model';
+import Student from '@models/student.model';
 import { NgForm, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 @NgModule({
   providers: [
@@ -20,11 +20,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-student-list-component',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  selector: 'app-student',
+  templateUrl: './student.component.html',
+  styleUrls: ['./student.component.scss'],
 })
-export class ListComponent {
+export class StudentComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

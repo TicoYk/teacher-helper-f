@@ -1,5 +1,5 @@
-import { LoginComponent } from './login/login.component';
-import { DashBoardRoutes } from './dashboard/dashboard-routing.module';
+import { LoginComponent } from '@pages/login/login.component';
+import { DashBoardRoutes } from '@pages/dashboard/dashboard-routing.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
