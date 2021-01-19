@@ -1,5 +1,5 @@
-import { RoomComponent } from './../room/room.component';
-import { ListComponent } from './../aluno/list/list.component';
+import { StudentComponent } from '@pages/student';
+import { RoomComponent } from '@pages/room';
 import { DashboardComponent } from './dashboard.component';
 import { Routes } from '@angular/router';
 
@@ -10,7 +10,7 @@ export const DashBoardRoutes: Routes = [
   },
   {
     path: 'students',
-    component: ListComponent
+    component: StudentComponent
   },
   {
     path: 'rooms',

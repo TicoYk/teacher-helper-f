@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import '@baseStyle';
 
 @Component({
   selector: 'app-login',
