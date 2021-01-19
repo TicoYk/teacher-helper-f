@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import Room from '@models/room.model';
+import Desk from '../models/desk.model';
+import Room from '../models/room.model';
 
 @Injectable()
 export class RoomService {

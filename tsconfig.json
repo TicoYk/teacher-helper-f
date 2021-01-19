@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -19,13 +19,7 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "@baseStyle": ["styles.scss"],
-      "@services/*": ["app/services/*"],
-      "@pages/*": ["app/pages/*"],
-      "@models/*": ["app/models/*"]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

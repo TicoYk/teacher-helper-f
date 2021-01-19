@@ -2,10 +2,10 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { RoomService } from '@services/room.service';
+import { RoomService } from './../services/room.service';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { Component, ViewChild, NgModule } from '@angular/core';
-import Room from '@models/room.model';
+import Room from '../models/room.model';
 
 @NgModule({
   providers: [
