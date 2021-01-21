@@ -1,7 +1,7 @@
 import { LoginComponent } from '@pages/login/login.component';
-import { DashBoardRoutes } from '@pages/dashboard/dashboard-routing.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PagesRoutes } from '@pages/pages.routes';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  ...DashBoardRoutes,
+  ...PagesRoutes,
 ];
 
 @NgModule({

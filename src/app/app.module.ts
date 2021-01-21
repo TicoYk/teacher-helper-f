@@ -1,3 +1,4 @@
+import { ClassroomComponent } from './pages/classroom/classroom.component';
 import { StudentComponent } from './pages/student/student.component';
 import { RoomService } from './services/room.service';
 import { StudentService } from './services/student.service';
@@ -21,7 +22,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
     DashboardComponent,
     LoginComponent,
     StudentComponent,
-    RoomComponent
+    RoomComponent,
+    ClassroomComponent
   ],
   imports: [
     BrowserModule,
