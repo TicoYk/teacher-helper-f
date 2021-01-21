@@ -19,6 +19,10 @@
           <mat-icon matListIcon>content_paste</mat-icon>
           <h3 matLine> Salas </h3>
         </mat-list-item>
+        <mat-list-item  [routerLink]="['/classroom']" [routerLinkActive]="router.url === '/classroom' ? ['active'] : ''" >
+          <mat-icon matListIcon>assignment</mat-icon>
+          <h3 matLine> Sala de Aula </h3>
+        </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
 
