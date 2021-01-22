@@ -7,7 +7,7 @@ export default class Room {
   columns?: number;
   desks: Desk[] = [];
 
-  constructor(name: string){
+  constructor(name?: string){
     this.name = name;
   }
 
