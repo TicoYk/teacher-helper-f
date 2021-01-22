@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getErrorMessage() {
+  getErrorMessage(): string {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
     }
