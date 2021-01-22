@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './pages/room/room.component';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { DeskComponent } from './pages/classroom/desk/desk.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
     LoginComponent,
     StudentComponent,
     RoomComponent,
-    ClassroomComponent
+    ClassroomComponent,
+    DeskComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
     LayoutModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StudentService,
