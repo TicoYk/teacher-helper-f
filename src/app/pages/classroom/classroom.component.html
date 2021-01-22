@@ -7,12 +7,22 @@
     <ng-template #elseBlock >
       <h1 class="title">Escolha uma Sala</h1>
     </ng-template>
-    <div class="right-box">
+
+    <div class="right-box" *ngIf="this.choosenRoom.name !== undefined">
       <div class="select-inp">
-        <mat-icon>add_box</mat-icon>
-        <mat-icon>indeterminate_check_box</mat-icon>
+        <mat-icon (click)="changeRowValue(1)">add_box</mat-icon>
+        <mat-icon (click)="changeRowValue(-1)">indeterminate_check_box</mat-icon>
+        <span>Linhas: {{this.choosenRoom.rows !== null ? this.choosenRoom.rows : "0"}}</span>
       </div>
     </div>
+    <div class="right-box" *ngIf="this.choosenRoom.name !== undefined">
+      <div class="select-inp">
+        <mat-icon (click)="changeColumnValue(1)">add_box</mat-icon>
+        <mat-icon (click)="changeColumnValue(-1)">indeterminate_check_box</mat-icon>
+        <span>Colunas: {{this.choosenRoom.columns !== null ? this.choosenRoom.columns : "0"}}</span>
+      </div>
+    </div>
+
     <div class="right-box">
       <mat-form-field appearance="fill" class="select-inp">
         <mat-label>Selecione uma Sala</mat-label>
@@ -27,15 +37,19 @@
   <div class="content-container">
     <div id="room-block">
       <div id="desk-container">
-        <mat-grid-list
-          cols="2"
-          rowHeight="{{choosenRoom.columns}}:{{choosenRoom.rows}}"
-          *ngFor="let desk of choosenRoom.desks;"
+        <table
+          [attr.height] = "roomLayout.height"
+          [attr.width] = "roomLayout.width"
         >
-          <mat-grid-tile>
-            1
-          </mat-grid-tile>
-        </mat-grid-list>
+          <tr *ngFor="let deskLine of desks;let x = index;">
+            <td *ngFor="let desk of deskLine;let y = index;">
+              <app-desk
+                [posX] = "x"
+                [posY] = "y"
+              ></app-desk>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
