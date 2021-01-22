@@ -1,3 +1,42 @@
 <app-dashboard>
-<h1>oi</h1>
+  <div class="title-box header-box">
+    <div *ngIf="choosenRoom.name !== undefined; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h1 class="title" >Sala - {{choosenRoom.name}}</h1>
+    </ng-template>
+    <ng-template #elseBlock >
+      <h1 class="title">Escolha uma Sala</h1>
+    </ng-template>
+    <div class="right-box">
+      <div class="select-inp">
+        <mat-icon>add_box</mat-icon>
+        <mat-icon>indeterminate_check_box</mat-icon>
+      </div>
+    </div>
+    <div class="right-box">
+      <mat-form-field appearance="fill" class="select-inp">
+        <mat-label>Selecione uma Sala</mat-label>
+        <mat-select (selectionChange)="onSelectChange($event.value)">
+          <mat-option *ngFor="let room of rooms; let i = index" [value]="i">
+            {{room.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="content-container">
+    <div id="room-block">
+      <div id="desk-container">
+        <mat-grid-list
+          cols="2"
+          rowHeight="{{choosenRoom.columns}}:{{choosenRoom.rows}}"
+          *ngFor="let desk of choosenRoom.desks;"
+        >
+          <mat-grid-tile>
+            1
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
 </app-dashboard>

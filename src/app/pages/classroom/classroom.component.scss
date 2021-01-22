@@ -1,0 +1,35 @@
+#room-block{
+  background-color: #ececea;
+  overflow-y: scroll !important;
+  overflow-x: scroll !important;
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(20,20,20,0.8);
+  -moz-box-shadow: 1px 1px 10px 1px rgba(20,20,20,0.8);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#desk-container {
+  padding:5px;
+  margin:0px;
+  font-size: 2em !important;
+  min-height: 78vh !important;
+  max-height: 78vh !important;
+}
+
+.header-box {
+  display: flex;
+  padding: 0px;
+}
+
+.right-box {
+  float: right;
+  margin-right: 0px;
+  flex: 1;
+}
+
+.select-inp {
+  margin-right: 0px;
+  float:right;
+}
+.title {
+  margin:0px;
+}
