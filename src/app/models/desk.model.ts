@@ -1,6 +1,8 @@
 import Student from './student.model';
 
 export default class Desk {
+
+  id?: number;
   posX?: number;
   posY?: number;
   student?: Student;
