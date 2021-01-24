@@ -2,8 +2,27 @@
   <div>
     <p>{{posX}}, {{posY}}</p>
   </div>
-  Carteira Vazia
+  <mat-form-field appearance="fill" class="select-inp">
+    <mat-label>Selecione um Aluno</mat-label>
+    <div *ngIf="desk.student === undefined; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <mat-select (selectionChange)="onSelectChange($event.value)" >
+        <mat-option *ngFor="let student of nonChoosenStudents;" [value]="student.id">
+          {{student.name}}
+        </mat-option>
+      </mat-select>
+    </ng-template>
+    <ng-template #elseBlock>
+      <mat-select (selectionChange)="onSelectChange($event.value)" [(value)]="desk.student!.id">
+        <mat-option [value]="desk.student!.id">
+          {{desk.student!.name}}
+        </mat-option>
+        <mat-option *ngFor="let student of nonChoosenStudents;" [value]="student.id">
+          {{student.name}}
+        </mat-option>
+      </mat-select>
+    </ng-template>
 
-  <button (click)="testEmit()">test</button>
+  </mat-form-field>
 </mat-card>
 
