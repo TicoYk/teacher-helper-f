@@ -22,7 +22,12 @@
         <span>Colunas: {{this.choosenRoom.columns !== null ? this.choosenRoom.columns : "0"}}</span>
       </div>
     </div>
-
+    <div class="right-box" *ngIf="this.choosenRoom.name !== undefined">
+      <div class="select-inp">
+        <mat-icon (click)="updateRoom()">add_box</mat-icon>
+        Salvar
+      </div>
+    </div>
     <div class="right-box">
       <mat-form-field appearance="fill" class="select-inp">
         <mat-label>Selecione uma Sala</mat-label>
@@ -46,6 +51,9 @@
               <app-desk
                 [posX] = "x"
                 [posY] = "y"
+                [desk] = "desk"
+                [nonChoosenStudents] = "nonChoosenStudents"
+                (onDeskChange)="onDeskChange($event)"
               ></app-desk>
             </td>
           </tr>
