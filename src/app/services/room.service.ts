@@ -19,6 +19,19 @@ export class RoomService {
     return this.http.post<Room>(this.apiURL, room, {headers});
   }
 
+  putRoom(room: Room): Observable<Room> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    room.desks.forEach( (desk, index) => {
+      if (desk.student === undefined) {
+        room.desks.splice(index, 1);
+      }
+    });
+    return this.http.put<Room>(this.apiURL, room, {headers})
+  }
+
   getRooms(): Observable<Room[]> {
     return this.http.get<Room[]>(`${this.apiURL}`);
   }
